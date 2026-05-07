@@ -7,31 +7,93 @@
     <meta name="robots" content="noindex, nofollow">
     <title>高2情報(土曜日)資料置き場　2026</title>
 <style>
-        body { font-family: sans-serif; max-width: 700px; margin: 20px auto; padding: 20px; color: #333; line-height: 1.6; }
-        h1 { border-bottom: 3px solid #0055aa; padding-bottom: 10px; }
+        * { box-sizing: border-box; } 
         
-        .day-section { margin-bottom: 15px; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; background: #fff; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+            max-width: 700px; 
+            margin: 0 auto; 
+            padding: 20px; 
+            color: #333; 
+            line-height: 1.6;
+            background-color: #fafafa;
+        }
+
+        h1 { 
+            font-size: 1.5rem; 
+            border-bottom: 3px solid #0055aa; 
+            padding-bottom: 10px; 
+            margin-top: 10px;
+        }
+
+        .day-section { 
+            margin-bottom: 15px; 
+            border: 1px solid #ddd; 
+            border-radius: 10px; 
+            overflow: hidden; 
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
         
         .day-header { 
-            background: #f0f4f8; padding: 12px 15px; font-weight: bold; cursor: pointer; outline: none; list-style: none; 
-            border-bottom: 1px solid #ddd; transition: background 0.3s;
+            background: #f0f4f8; 
+            padding: 15px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            outline: none; 
+            list-style: none; 
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            align-items: center;
         }
-        .day-header:hover { background: #e2eaf2; }
+        
         .day-header::-webkit-details-marker { display: none; }
-        .day-header::before { content: "▼ "; font-size: 0.8em; color: #0055aa; margin-right: 5px; }
-        .day-section[open] .day-header::before { content: "▲ "; }
+        .day-header::before { 
+            content: ""; 
+            display: inline-block;
+            width: 0; height: 0;
+            border-style: solid;
+            border-width: 6px 0 6px 10px;
+            border-color: transparent transparent transparent #0055aa;
+            margin-right: 12px;
+            transition: transform 0.2s;
+        }
+        .day-section[open] .day-header::before { 
+            transform: rotate(90deg);
+        }
 
         .day-content { padding: 15px; }
 
         .overview { 
-            background: #fff9e6; border-left: 4px solid #ffcc00; padding: 10px; margin-bottom: 15px; font-size: 0.95em; color: #555;
+            background: #fff9e6; 
+            border-left: 4px solid #ffcc00; 
+            padding: 12px; 
+            margin-bottom: 15px; 
+            font-size: 0.9rem; 
+            color: #555;
+            border-radius: 0 4px 4px 0;
         }
-
         .file-list { list-style: none; padding: 0; margin: 0; }
-        .file-item { padding: 8px 0; border-bottom: 1px dotted #eee; }
-        .file-item:last-child { border-bottom: none; }
-        .file-item a { color: #0066cc; text-decoration: none; font-weight: bold; }
-        .file-item a:hover { text-decoration: underline; }
+        .file-item { margin-bottom: 8px; }
+        .file-item a { 
+            display: block;
+            background: #f8f9fa;
+            border: 1px solid #eee;
+            padding: 12px 15px;
+            border-radius: 6px;
+            color: #0066cc; 
+            text-decoration: none; 
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+        .file-item a:hover { background: #e9ecef; }
+        .file-item a::before { content: "📄 "; }
+
+        @media (max-width: 480px) {
+            body { padding: 10px; }
+            h1 { font-size: 1.2rem; }
+            .day-header { padding: 12px; }
+        }
     </style>
 </head>
 <body>
