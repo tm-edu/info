@@ -109,9 +109,9 @@
         }
         .group-section {
             margin-bottom: 20px;
-            border: 1px solid #999; /* 少し強めの枠線 */
+            border: 1px solid #999;
             border-radius: 8px;
-            background-color: #f0f0f0; /* 全体の背景を薄いグレーに */
+            background-color: #f0f0f0;
             overflow: hidden;
         }
 
@@ -121,13 +121,16 @@
             color: #fff;
             font-weight: bold;
             cursor: pointer;
-            list-style: none;
+            display: list-item;
         }
 
-        .group-header::-webkit-details-marker { display: none; }
+
+        .group-header::marker {
+            color: #fff;
+        }
 
         .group-content {
-            padding: 15px 10px; /* 中の要素との間に余白を作る */
+            padding: 15px 10px;
         }
     </style>
 </head>
