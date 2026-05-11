@@ -107,6 +107,28 @@
             h1 { font-size: 1.2rem; }
             .day-header { padding: 12px; }
         }
+        .group-section {
+            margin-bottom: 20px;
+            border: 1px solid #999; /* 少し強めの枠線 */
+            border-radius: 8px;
+            background-color: #f0f0f0; /* 全体の背景を薄いグレーに */
+            overflow: hidden;
+        }
+
+        .group-header {
+            padding: 12px 15px;
+            background-color: #444;
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .group-header::-webkit-details-marker { display: none; }
+
+        .group-content {
+            padding: 15px 10px; /* 中の要素との間に余白を作る */
+        }
     </style>
 </head>
 <body>
@@ -129,11 +151,10 @@
                 </ul>
         </div>
     </div>
-    <details class="day-section" open>
-        <summary class="day-header">A組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
-        <div class="day-content">
-            
-            <!-- A,B,C組の枠 -->
+    <details class="group-section" open>
+        <summary class="group-header">A組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
+        <div class="group-content">
+
             <details class="day-section" close>
                 <summary class="day-header">2026年5月16日（土）</summary>
                 <div class="day-content">
@@ -144,11 +165,23 @@
             </details>
         </div>
     </details>
-        <details class="day-section" open>
-        <summary class="day-header">B組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
-        <div class="day-content">
+        <details class="group-section" open>
+        <summary class="group-header">B組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
+        <div class="group-content">
             
-            <!-- A,B,C組の枠 -->
+            <details class="day-section" close>
+                <summary class="group-header">2026年5月16日（土）</summary>
+                <div class="day-content">
+                    <div class="overview">
+                        配列について扱います.<br>
+                    </div>
+                </div>
+            </details>
+        </div>
+    </details>
+        <details class=""group-section" open>
+        <summary class="group-header">C組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
+        <div class="group-content">
             <details class="day-section" close>
                 <summary class="day-header">2026年5月16日（土）</summary>
                 <div class="day-content">
@@ -159,26 +192,10 @@
             </details>
         </div>
     </details>
-        <details class="day-section" open>
-        <summary class="day-header">C組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
-        <div class="day-content">
+        <details class="group-section" open>
+        <summary class="group-header">D組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
+        <div class="group-content">
             
-            <!-- A,B,C組の枠 -->
-            <details class="day-section" close>
-                <summary class="day-header">2026年5月16日（土）</summary>
-                <div class="day-content">
-                    <div class="overview">
-                        配列について扱います.<br>
-                    </div>
-                </div>
-            </details>
-        </div>
-    </details>
-        <details class="day-section" open>
-        <summary class="day-header">D組　2026年5月16日（土）から2026年6月13日（土）まで</summary>
-        <div class="day-content">
-            
-            <!-- A,B,C組の枠 -->
             <details class="day-section" close>
                 <summary class="day-header">2026年5月16日（土）</summary>
                 <div class="day-content">
