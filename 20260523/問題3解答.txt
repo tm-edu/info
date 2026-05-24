@@ -1,0 +1,22 @@
+public class Problem3 {
+    // 最大値を見つける関数
+    public static int FindMax(int[] values) {
+        int max = values[0]; // 最初の要素を仮の最大値とする
+        // 2番目（インデックス1）から最後まで比較していく
+        for (int i = 1; i < values.Length; i = i + 1) {
+            if (values[i] > max) {
+                max = values[i]; // 今までの最大値より大きければ上書き
+            }
+        }
+        return max;
+    }
+
+    public static void Main() {
+        int[] heights = { 165, 172, 180, 158, 175 };
+        
+        int result = FindMax(heights);
+        
+        System.Console.WriteLine("最も高い身長:");
+        System.Console.WriteLine(result + " cm です。");
+    }
+}

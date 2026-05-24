@@ -1,0 +1,25 @@
+public class Problem2 {
+    // 平均値を計算する関数
+    public static double CalculateAverage(int[] values) {
+        int sum = 0;
+
+        // 配列の中身をすべて足し合わせる
+        for (int i = 0; i < values.Length; i = i + 1) {
+            // 今までの合計(sum)に、新しい値(values[i])を足して上書き
+            sum = sum + values[i];
+        }
+
+        // sumをdoubleにキャストしてから割り算をする
+        return (double)sum / values.Length; 
+    }
+
+    // 実行用メソッド
+    public static void Main() {
+        int[] testScores = { 80, 75, 92, 60, 85 };
+        
+        double result = CalculateAverage(testScores);
+        
+        System.Console.WriteLine("テストの平均点:");
+        System.Console.WriteLine(result + " 点です。");
+    }
+}
