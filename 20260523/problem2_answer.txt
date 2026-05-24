@@ -13,7 +13,6 @@ public class Problem2 {
         return (double)sum / values.Length; 
     }
 
-    // 実行用メソッド
     public static void Main() {
         int[] testScores = { 80, 75, 92, 60, 85 };
         
