@@ -1,0 +1,23 @@
+public class QuickSortEx {
+    public static void QuickSort(int[] arr, int left, int right) {
+        if (left >= right) return;
+        int pivot = arr[(left + right) / 2]; // 中央の値を基準に
+        int i = left, j = right;
+        while (i <= j) {
+            while (arr[i] < pivot) i++;
+            while (arr[j] > pivot) j--;
+            if (i <= j) {
+                int temp = arr[i]; arr[i] = arr[j]; arr[j] = temp;
+                i++; j--;
+            }
+        }
+        System.Console.WriteLine($"基準{pivot}: " + string.Join(",", arr));
+        QuickSort(arr, left, j); // 小さいグループを再帰
+        QuickSort(arr, i, right); // 大きいグループを再帰
+    }
+    public static void Main() {
+        int[] data = { 5, 3, 8, 4, 2, 7, 1 };
+        System.Console.WriteLine("初期: " + string.Join(",", data));
+        QuickSort(data, 0, data.Length - 1); 
+    }
+}

@@ -1,0 +1,13 @@
+public class ArrayEx{
+    public static void Main(){
+        int[] scores = new int[5];
+        // 1. 宣言とメモリの確保
+        scores[0] = 85;
+        scores[1] = 92;
+        int[] myScores = { 10, 20, 30, 40, 50 }; 
+        // 2. 宣言と同時に初期化
+        // 3. データへのアクセス
+        System.Console.WriteLine(myScores[0]); 
+        // 結果: 10
+    }
+}

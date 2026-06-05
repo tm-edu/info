@@ -1,0 +1,11 @@
+public class FunctionEx{
+    // 2つの数字を受け取り、合計を返す関数
+    public static int Add(int a, int b) {
+        return a + b; // 結果を返す
+    }
+    public static void Main(){
+        // 関数の呼び出し
+        int result = Add(10, 20);
+        System.Console.WriteLine(result); // 結果: 30
+    }
+}
