@@ -1,0 +1,14 @@
+public class ArrayAndFunction{
+    // 配列内の数値をすべて足す関数
+    public static int SumArray(int[] numbers){
+        int total = 0;
+        for (int i = 0; i < numbers.Length; i++) {
+            total += numbers[i];
+        }
+        return total;
+    }
+    public static void Main(){
+        int[] testScores = { 80, 90, 100 };
+        System.Console.WriteLine(SumArray(testScores)); // 結果: 270
+    }
+}
