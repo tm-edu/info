@@ -1,0 +1,14 @@
+public class GradientDescent {
+    public static double F(double x) { return x * x - 4.0 * x + 5.0; }
+    public static double Df(double x) { return (F(x + 1e-5) - F(x)) / 1e-5; }
+
+    public static void Main() {
+        double x = 0.0; // 初期値
+        double alpha = 0.1; // 学習率（一歩の幅）
+        for (int i = 1; i <= 30; i++) {
+            x = x - alpha * Df(x); // 傾きと逆方向へ進む
+            System.Console.WriteLine($"{i}回目: x = {x}");
+        }
+        System.Console.WriteLine("最終結果: " + x);
+    }
+}

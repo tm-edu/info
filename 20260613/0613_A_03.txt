@@ -1,0 +1,20 @@
+public class BisectionMethod {
+    public static double F(double x) { return x * x - 2.0; }
+
+    public static void Main() {
+        double a = 1.0; // 探索範囲の左端
+        double b = 2.0; // 探索範囲の右端
+        double epsilon = 1e-10; // 許容誤差
+        while ((b - a) > epsilon) {
+            double c = (a + b) / 2.0; // 範囲の中点を計算
+            // 左端と中点で関数の符号が違えば、解は左半分にある
+            if (F(a) * F(c) < 0) {
+                b = c; // 右端を中点まで狭める
+            } else {
+                a = c; // 左端を中点まで狭める
+            }
+            System.Console.WriteLine("近似値: " + c);
+        }
+        System.Console.WriteLine("最終結果: " + (a + b) / 2.0);
+    }
+}
