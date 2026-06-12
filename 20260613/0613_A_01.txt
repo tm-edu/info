@@ -1,14 +1,14 @@
-public class NewtonMethod {
+public class NumericalDiff {
     public static double F(double x) { return x * x - 2.0; }
-    public static double Df(double x) { return (F(x + 1e-5) - F(x)) / 1e-5; }
+
+    // 数値微分 f'(x)
+    public static double Df(double x) {
+        double h = 1e-5; // 0.00001
+        return (F(x + h) - F(x)) / h;
+    }
 
     public static void Main() {
-        double x = 3.0; // 初期値
-        double epsilon = 1e-10; // 許容誤差
-        while (System.Math.Abs(F(x)) > epsilon) {
-            x = x - F(x) / Df(x); // ニュートン法の更新式
-            System.Console.WriteLine("近似値: " + x);
-        }
-        System.Console.WriteLine("最終結果: " + x);
+        // x=3 のときの傾きは本来 2*x = 6
+        System.Console.WriteLine("傾きの近似値: " + Df(3.0));
     }
 }
