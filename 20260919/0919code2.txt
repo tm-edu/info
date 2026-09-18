@@ -1,0 +1,29 @@
+private void button1_Click(object sender, EventArgs e)
+{
+    // 1. 基本の文字（小文字）を用意しておく
+    string chars = "abcdefghijklmnopqrstuvwxyz";
+
+    // 2. チェックボックスの状態で、使う文字の候補(chars)を増やす
+    if (checkBox1.Checked)
+    {
+        chars = chars + "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    }
+    if (checkBox2.Checked)
+    {
+        chars = chars + "0123456789";
+    }
+
+    // 3. パスワードを生成する処理
+    string password = "";
+    Random r = new Random();
+    int length = (int)numericUpDown1.Value; // 指定した文字数
+
+    for (int i = 0; i < length; i++)
+    {
+        int index = r.Next(chars.Length);
+        password = password + chars[index];
+    }
+
+    // 4. 完成したパスワードを表示
+    textBox1.Text = password;
+}

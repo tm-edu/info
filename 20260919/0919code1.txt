@@ -1,0 +1,16 @@
+ private void button1_Click(object sender, EventArgs e)
+ {
+     double height = double.Parse(textBox1.Text);
+     double weight = double.Parse(textBox2.Text);
+
+     // 2. 計算（理想体重は 身長 - 110）
+     double idealWeight = height - 110;
+
+     // BMIの計算（身長をmに直して計算）
+     double heightM = height / 100.0;
+     double bmi = weight / (heightM * heightM);
+
+     // 3. 結果を表示
+     label1.Text = "あなたの理想体重は " + idealWeight + " kg です。\n"
+                 + "現在のBMIは " + bmi.ToString("F1") + " です。";
+ }
