@@ -11,6 +11,6 @@
      double bmi = weight / (heightM * heightM);
 
      // 3. 結果を表示
-     label1.Text = "あなたの理想体重は " + idealWeight + " kg です。\n"
+     label3.Text = "あなたの理想体重は " + idealWeight + " kg です。\n"
                  + "現在のBMIは " + bmi.ToString("F1") + " です。";
  }
