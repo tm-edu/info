@@ -1,0 +1,40 @@
+public Form1()
+{
+    InitializeComponent();
+}
+Random r = new Random();
+private void DrawGacha()
+{
+    int num = r.Next(100);
+    string result = "";
+
+    if (num < 5)
+    {
+        result = "【SSR】 伝説の剣";
+    }
+    else if (num < 20)
+    {
+        result = "【SR】 鋼の盾";
+    }
+    else
+    {
+        result = "【R】 薬草";
+    }
+    listBox1.Items.Add(result);
+}
+private void button1_Click(object sender, EventArgs e)
+{
+    listBox1.Items.Clear(); // まず履歴をリセット
+    DrawGacha();            // 自作した命令を呼び出す
+    listBox1.SelectedIndex = listBox1.Items.Count - 1;
+}
+
+private void button2_Click(object sender, EventArgs e)
+{
+    listBox1.Items.Clear(); // まず履歴をリセット
+    for (int i = 0; i < 10; i++)
+    {
+        DrawGacha();        // 自作した命令を10回呼び出す
+    }
+    listBox1.SelectedIndex = listBox1.Items.Count - 1;
+}

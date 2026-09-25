@@ -1,0 +1,53 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Net.Http;
+using System.Text.Json;
+
+namespace WindowsFormsApp7
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            // 入力された郵便番号を末尾に連結する
+            string zip = textBox1.Text;
+            string url = "https://zipcloud.ibsnet.co.jp/api/search?zipcode=" + zip;
+
+            // 2. インターネットからデータを取得 非同期処理
+            HttpClient client = new HttpClient();
+            string jsonStr = await client.GetStringAsync(url);
+
+            // 3. 取得したJSONデータから住所を取り出す
+            using (JsonDocument doc = JsonDocument.Parse(jsonStr))
+            {
+                var results = doc.RootElement.GetProperty("results");
+                if (results.ValueKind != JsonValueKind.Null) // データが存在した場合
+                {
+                    var item = results[0];
+                    string pref = item.GetProperty("address1").GetString(); // 都道府県
+                    string city = item.GetProperty("address2").GetString(); // 市区町村
+                    string town = item.GetProperty("address3").GetString(); // 町域
+
+                    label1.Text = pref + city + town;
+                }
+                else
+                {
+                    label1.Text = "見つかりませんでした.";
+                }
+            }
+        }
+    }
+}
