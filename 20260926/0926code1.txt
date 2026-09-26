@@ -1,62 +1,49 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
-
-namespace WindowsFormsApp5
+public Form1()
 {
-    public partial class Form1 : Form
+    InitializeComponent();
+}
+//ここから
+int time = 10;
+int score = 0;
+bool isPlaying = false; // ゲーム中かどうかを判定するフラグ
+//ここまで
+
+private void button1_Click(object sender, EventArgs e)
+{
+//ここから
+    if (isPlaying == false)
     {
-        public Form1()
-        {
-            InitializeComponent();
-        }
-
-        int time = 10;
-        int score = 0;
-        bool isPlaying = false; // ゲーム中かどうかを判定するフラグ
-
-        // Button1 (クリック時の処理)
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (isPlaying == false)
-            {
-                // スタート時の処理
-                isPlaying = true;
-                button1.Text = "連打！"; // ボタンの文字を書き換える
-                time = 10;
-                score = 0;
-                label1.Text = time.ToString();
-                label2.Text = score.ToString();
-                timer1.Start(); // タイマー開始
-            }
-            else
-            {
-                // 連打時の処理
-                score = score + 1;
-                label2.Text = score.ToString();
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            time = time - 1; // 残り時間を減らす
-            label1.Text = time.ToString();
-
-            // 0秒になったら停止させる
-            if (time == 0)
-            {
-                timer1.Stop(); // タイマー停止
-                isPlaying = false;       // ゲーム状態を元に戻す
-                button1.Text = "スタート"; // ボタンの文字を元に戻す
-                MessageBox.Show("終了！ スコアは " + score + " 回です.");
-            }
-        }
+        // スタート時の処理
+        isPlaying = true;
+        button1.Text = "連打！"; // ボタンの文字を書き換える
+        time = 10;
+        score = 0;
+        label1.Text = time.ToString();
+        label2.Text = score.ToString();
+        timer1.Start(); // タイマー開始
     }
+    else
+    {
+        // 連打時の処理
+        score = score + 1;
+        label2.Text = score.ToString();
+    }
+//ここまで
+}
+
+private void timer1_Tick(object sender, EventArgs e)
+{
+//ここから
+    time = time - 1; // 残り時間を減らす
+    label1.Text = time.ToString();
+
+    // 0秒になったら停止させる
+    if (time == 0)
+    {
+        timer1.Stop(); // タイマー停止
+        isPlaying = false;       // ゲーム状態を元に戻す
+        button1.Text = "スタート"; // ボタンの文字を元に戻す
+        MessageBox.Show("終了！ スコアは " + score + " 回です.");
+    }
+//ここまで
 }
